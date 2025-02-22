@@ -6,29 +6,27 @@
   <title>Random Affirmation Generator</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-  <h1>Welcome to Your Affirmation Generator</h1>
+  <header>
+    <h1>Welcome to Your Affirmation Generator</h1>
+  </header>
 <hr>
-  <div id="js-display-quote" class="display-quote">Inspiration Awaits!</div>
-  <div>
-    <button id="js-generate-affirmation">Generate Affirmation</button>
-  </div>
-  <div>
-    <button id="js-reset-affirmation">Reset Affirmations</button>
-  </div>
+  <main>
+    <div id="js-display-quote" class="display-quote">Inspiration Awaits!</div>
+      <button id="js-generate-affirmation">Generate Affirmation</button> 
+      <button id="js-reset-affirmation">Reset Affirmations</button>
 <hr>
-  <div id="input-container">
     <h3>Feeling enlightened? Add your own affirmation or inspiriational quote!</h3>
       <textarea name="input-affirmation" id="js-input-affirmation" cols="100" rows="10"></textarea>
-    <div>
-      <button id="js-add-affirmation-button">Submit</button>
-    </div>
-  </div>
-
-  <a href="./manage-affirmations.html">Manage Your Affirmations</a>
-
-<footer>
-  <script type="module" src="./scripts/index.js"></script>
-</footer>
+        <div class="separation-div">
+          <button id="js-add-affirmation-button">Submit</button>
+        </div>
+    <a href="./manage-affirmations.html">Manage Your Affirmations</a>
+  </main>
+<hr>
+  <footer>
+    <script type="module" src="./scripts/index.js"></script>
+  </footer>
 </body>
 </html>

@@ -2,10 +2,11 @@
 let affirmations = ['Eat more potatoes. Do not forget the humble spud.', 'It is not you, it is the crushing weight of capitalism upon your soul.', 'Eagles may soar, but weasels do not get sucked into jet engines.', 'The expert in anything was once a beginner.', 'WHOA, dream big! -Juno MacGuff', 'Women challenge the status quo because we are never it. - Cindy Gallop', "I'm gonna keep on dancing at the Pink Pony Club - Chappell Roan" ];
 
 //set JSON item for array recall (i googled)
-let affirmationsJSON = JSON.stringify(affirmations);localStorage.setItem("affirmationsJSON", affirmationsJSON);
+let affirmationsJSON = JSON.stringify(affirmations);
+localStorage.setItem("affirmationsJSON", affirmationsJSON);
 
 //get JSON item
-const retrieveAffirmationsJSON = localStorage.getItem("affirmationsJSON");
+/* let retrieveAffirmationsJSON = localStorage.getItem("affirmationsJSON"); */
 
 //communicate with document elements
 const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation');
@@ -33,17 +34,16 @@ function handleGenerate() {
    
     displayQuote.textContent = `${randomAffirmation}` //display value of random index in html
   }
-  
 };
 
 
 //handleReset
 function handleReset(){
-  affirmations = JSON.parse(retrieveAffirmationsJSON); //retreive array from storage and reassign to variable
+  affirmations = JSON.parse(affirmationsJSON); //retreive array from storage and reassign to variable
   
   alert('The quotes have been reset.')
-  displayQuote.textContent = `Inspiration awaits` //reset html display
-  console.log(affirmations)
+  displayQuote.textContent = `Inspiration Awaits!` //reset html display
+  console.log(affirmations) //test log
   console.log(affirmationsJSON); //test log to see if array was reset to original
 }
 
@@ -52,7 +52,8 @@ function handleReset(){
 function handleAdd(){
   console.log('connected');
   affirmations.push(inputAffirmation.value); //push input value to array
-  affirmationsJSON = JSON.stringify(affirmations);localStorage.setItem("affirmationsJSON", affirmationsJSON); //update local storage with new value
+  affirmationsJSON = JSON.stringify(affirmations);
+  localStorage.setItem("affirmationsJSON", affirmationsJSON); //update local storage with new value
   alert(`Your quote "${inputAffirmation.value}" has been added to your list of affirmations!`); //notify user of change
   inputAffirmation.value = ""; //clear html text area for new input
 

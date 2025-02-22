@@ -1,21 +1,33 @@
 * {
-  background-color: rgb(14, 109, 169);
-  color: rgb(251, 156, 23);
+  background-color: rgb(58, 120, 86);
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 
 button {
-  background-color:  rgb(52, 163, 235);
+  background-color: rgb(125, 175, 75);
   padding: .5em;
   margin: 20px 20px;
 }
 
 button:hover {
-  background-color:  rgb(79, 175, 239);
+  background-color: rgb(169, 199, 112);
 }
 
 .display-quote {
-  font-size: x-large;
+  font-size: 32px;
+  padding: 20px;
+  border: 2px orange solid;
+  border-radius: 2em;
+  background-color: rgb(125, 175, 75);
+  color: white;
+}
+
+textarea {
+  border-radius: 2em;
+  border: 1px orange solid;
+  background-color: rgb(169, 199, 112);
+  padding-top: 60px;
 }
 
 

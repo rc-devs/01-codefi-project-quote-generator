@@ -33,26 +33,12 @@ function displayAffirmationsArray() { //display data
 
   document.querySelector('#js-manage-affirmations-container').innerHTML = displayHTML;
 
-  
-
-/*   affirmationsArray.forEach((quote) => { //loop through array, display each value (quote) in html
-    manageContainer.innerHTML += 
-    `
-    <div id="js-quote-container">
-    <p>${quote}</p>
-      <button class="js-delete">Delete</button>
-      <button class="js-favorite">Add to Favorites</button>
-    </div>
-    `;
-
-    //new dom and event listener
-    const btnDelete = document.querySelectorAll('.js-delete'); //delete dom
-    btnDelete.forEach((btn) => {btn.addEventListener('click', handleDelete)}); 
-
-  });
+ /*  //new dom and event listener created
+  const btnDelete = document.querySelectorAll('.js-delete'); //delete dom
+  btnDelete.forEach((btn) => {btn.addEventListener('click', handleDelete)});  */
 };
 
-
+/* 
 function handleDelete(){
   let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
 
@@ -63,6 +49,6 @@ function handleDelete(){
   
   console.log('delete');
   console.log(retrievedData);
-  console.log(affirmationsArray); */
-  };
+  console.log(affirmationsArray);
+  }; */
 

@@ -1,6 +1,6 @@
 console.log('connected to manage-affirmations.js');
 //imports
-const retrievedData = localStorage.getItem("affirmationsJSON")
+let retrievedData = localStorage.getItem("affirmationsJSON")
 
 //dom communication
 const manageContainer = document.querySelector('#js-manage-affirmations-container');
@@ -42,12 +42,12 @@ btnDelete.forEach((btn) => {
  
   //delete from array
   console.log("this is the affrimations array", affirmationsArray); //current array
-  affirmationsArray.splice(currentBtnIndex, 1) //delete from array
+  affirmationsArray.splice(currentBtnIndex, 1); //delete from array
+  retrievedData = JSON.stringify(affirmationsArray); //change js back to JSOn
   console.log("affirmations array after delete", affirmationsArray); //array post delete
   console.log('delete'); //delete confirm
 
   //change innerhtml
-  displayAffirmationsArray();
- 
+  displayAffirmationsArray(); //does not work
   });
 });

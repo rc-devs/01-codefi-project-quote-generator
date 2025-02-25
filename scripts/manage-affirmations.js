@@ -26,51 +26,30 @@ function displayAffirmationsArray() { //display data
       `;
     displayHTML += display;
   }
-
   document.querySelector('#js-manage-affirmations-container').innerHTML = displayHTML;
-
-  //new dom and event listener created for delete
-  const btnDelete = document.querySelectorAll('.js-delete'); //delete dom
-  btnDelete.forEach((btn) => {
-    btn.addEventListener('click', () => {
-    let currentBtnIndex = btn.dataset.index;
-    let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
-   
-    console.log("this is the object array",affirmationsArray); //test array
-  
-  affirmationsArray.splice(currentBtnIndex, 1)
-    console.log(affirmationsArray);
-    
-
-    //affirmationsArray.displayAffirmationsArray();
-    
-    
-    // console.log('delete');
-    // console.log("this is the JSON String", retrievedData); 
-    // console.log("this is the object array",affirmationsArray);
-    }
-  )})
+  console.log('displayAffrimationsArray runs')
 };
 
 
-// function handleDelete(btn){
-//   const currentBtnIndex = btn.dataset.index;
-//   console.log(currentBtnIndex);
-//   const currentIndex = null;
-//   let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
+//new dom delete
+const btnDelete = document.querySelectorAll('.js-delete');
+  
+//delete (?)function
+btnDelete.forEach((btn) => {
+  btn.addEventListener('click', () => {
+  let currentBtnIndex = btn.dataset.index;
+  let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
  
-//   console.log("this is the object array",affirmationsArray); //test array
+  //delete from array
+  console.log("this is the affrimations array", affirmationsArray); //test array
+  affirmationsArray.splice(currentBtnIndex, 1) //delete from array
+  
 
-//   for (let i = 0; i < affirmationsArray.length; i++) {
-//     console.log(affirmationsArray[i])
-//     //affirmationsArray.splice(i, 1);
-//   }
+  console.log("affirmations array after delete", affirmationsArray);
   
-//   //affirmationsArray.displayAffirmationsArray();
-  
-  
-//   console.log('delete');
-//   console.log("this is the JSON String", retrievedData); 
-//   console.log("this is the object array",affirmationsArray);
-//   };
 
+  //change innerhtml
+  /* document.querySelector('#js-manage-affirmations-container').innerHTML =  */displayAffirmationsArray();
+  console.log('delete');
+  });
+});

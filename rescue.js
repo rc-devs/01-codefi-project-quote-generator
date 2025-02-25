@@ -34,20 +34,22 @@ function displayAffirmationsArray() { //display data
 //new dom delete
 const btnDelete = document.querySelectorAll('.js-delete');
   
-//delete (?)function event
+//delete (?)function
 btnDelete.forEach((btn) => {
   btn.addEventListener('click', () => {
   let currentBtnIndex = btn.dataset.index;
   let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
  
   //delete from array
-  console.log("this is the affrimations array", affirmationsArray); //current array
+  console.log("this is the affrimations array", affirmationsArray); //test array
   affirmationsArray.splice(currentBtnIndex, 1) //delete from array
-  console.log("affirmations array after delete", affirmationsArray); //array post delete
-  console.log('delete'); //delete confirm
+  
+
+  console.log("affirmations array after delete", affirmationsArray);
+  
 
   //change innerhtml
-  displayAffirmationsArray();
- 
+  /* document.querySelector('#js-manage-affirmations-container').innerHTML =  */displayAffirmationsArray();
+  console.log('delete');
   });
 });

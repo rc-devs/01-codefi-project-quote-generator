@@ -1,5 +1,5 @@
 //quote array
-let affirmations = ['Eat more potatoes. Do not forget the humble spud.', 'It is not you, it is the crushing weight of capitalism upon your soul.', 'Eagles may soar, but weasels do not get sucked into jet engines.', 'The expert in anything was once a beginner.', 'WHOA, dream big! -Juno MacGuff', 'Women challenge the status quo because we are never it. - Cindy Gallop', "I'm gonna keep on dancing at the Pink Pony Club - Chappell Roan" ];
+let affirmations = ['Eat more potatoes. Do not forget the humble spud.', 'It is not you, it is the crushing weight of capitalism upon your soul.', 'Eagles may soar, but weasels do not get sucked into jet engines.', 'The expert in anything was once a beginner.', 'WHOA, dream big! -Juno MacGuff', 'Women challenge the status quo because we are never it. - Cindy Gallop', "I'm gonna keep on dancing at the Pink Pony Club - Chappell Roan", "Fall down seven times, get up eight." ];
 
 //set JSON item for array recall (i googled)
 let affirmationsJSON = JSON.stringify(affirmations);

@@ -28,26 +28,27 @@ function displayAffirmationsArray() { //display data
   }
   document.querySelector('#js-manage-affirmations-container').innerHTML = displayHTML;
   console.log('displayAffrimationsArray runs')
+
+  //new dom delete
+  const btnDelete = document.querySelectorAll('.js-delete');
+    
+  //delete (?)function event
+  btnDelete.forEach((btn) => {
+    btn.addEventListener('click', () => {
+    let currentBtnIndex = btn.dataset.index;
+    let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
+  
+    //delete from array
+    console.log("this is the affrimations array", affirmationsArray); //current array
+    affirmationsArray.splice(currentBtnIndex, 1); //delete from array
+    retrievedData = JSON.stringify(affirmationsArray); //change js back to JSON
+    console.log("affirmations array after delete", affirmationsArray); //array post delete
+    console.log('delete'); //delete confirm
+
+    //change innerhtml
+    displayAffirmationsArray(); //does not work
+    });
+  });
 };
 
 
-//new dom delete
-const btnDelete = document.querySelectorAll('.js-delete');
-  
-//delete (?)function event
-btnDelete.forEach((btn) => {
-  btn.addEventListener('click', () => {
-  let currentBtnIndex = btn.dataset.index;
-  let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
- 
-  //delete from array
-  console.log("this is the affrimations array", affirmationsArray); //current array
-  affirmationsArray.splice(currentBtnIndex, 1); //delete from array
-  retrievedData = JSON.stringify(affirmationsArray); //change js back to JSOn
-  console.log("affirmations array after delete", affirmationsArray); //array post delete
-  console.log('delete'); //delete confirm
-
-  //change innerhtml
-  displayAffirmationsArray(); //does not work
-  });
-});

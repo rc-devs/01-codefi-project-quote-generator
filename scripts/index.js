@@ -27,7 +27,8 @@ function handleGenerate() {
   const randomAffirmation = (affirmations[(Math.floor(Math.random(affirmations) * affirmations.length))]);
   
   if (affirmations == "") { //check if array empty
-    displayQuote.textContent =`There are no more affirmations 😭`;
+    alert('You have reached the end of your affirmations list. Your list has been reset.')
+    handleReset();
     
     console.log('js object', affirmations) //test log
     console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
@@ -46,7 +47,7 @@ function handleGenerate() {
 function handleReset(){
   affirmations = JSON.parse(affirmationsJSON); //retreive array from storage and reassign to variable
   
-  alert('The quotes have been reset.')
+  console.log('The quotes have been reset.') 
   displayQuote.textContent = `Inspiration Awaits!` //reset html display
   console.log('js object', affirmations) //test log
   console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
@@ -55,13 +56,12 @@ function handleReset(){
 
 //add quote
 function handleAdd(){
-  console.log('connected');
+  console.log('handleAdd runs');
   affirmations.push(inputAffirmation.value); //push input value to array
-  affirmationsJSON = JSON.stringify(affirmations);
-  /* localStorage.setItem("affirmationsJSON", affirmationsJSON); //update local storage with new value */
+  affirmationsJSON = JSON.stringify(affirmations); 
+
   alert(`Your quote "${inputAffirmation.value}" has been added to your list of affirmations!`); //notify user of change
   inputAffirmation.value = ""; //clear html text area for new input
-
 
   console.log('js object', affirmations); //test log to ensure input was pushed to array
   console.log('json storage', affirmationsJSON); //test log to ensure local storage update

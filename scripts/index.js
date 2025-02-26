@@ -28,7 +28,7 @@ function handleGenerate() {
   
   if (affirmations == "") { //check if array empty
     displayQuote.textContent =`There are no more affirmations 😭`;
-    affirmationsJSON = JSON.stringify(affirmations);
+    
     console.log('js object', affirmations) //test log
     console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   } else {

@@ -58,7 +58,7 @@ function handleReset(){
 function handleAdd(){
   console.log('handleAdd runs');
   affirmations.push(inputAffirmation.value); //push input value to array
-  affirmationsJSON = JSON.stringify(affirmations); 
+  affirmationsJSON = JSON.stringify(affirmations); //
   localStorage.setItem("affirmationsJSON", affirmationsJSON);
 
   alert(`Your quote "${inputAffirmation.value}" has been added to your list of affirmations!`); //notify user of change

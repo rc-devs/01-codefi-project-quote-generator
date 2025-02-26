@@ -1,7 +1,7 @@
 //quote array
 let affirmations = ['Eat more potatoes. Do not forget the humble spud.', 'It is not you, it is the crushing weight of capitalism upon your soul.', 'Eagles may soar, but weasels do not get sucked into jet engines.', 'The expert in anything was once a beginner.', 'WHOA, dream big! -Juno MacGuff', 'Women challenge the status quo because we are never it. - Cindy Gallop', "I'm gonna keep on dancing at the Pink Pony Club - Chappell Roan", "Fall down seven times, get up eight." ];
 
-//set JSON item for array recall (i googled)
+//set JSON item for array recall; could make util??
 let affirmationsJSON = JSON.stringify(affirmations);
 localStorage.setItem("affirmationsJSON", affirmationsJSON);
 
@@ -59,6 +59,7 @@ function handleAdd(){
   console.log('handleAdd runs');
   affirmations.push(inputAffirmation.value); //push input value to array
   affirmationsJSON = JSON.stringify(affirmations); 
+  localStorage.setItem("affirmationsJSON", affirmationsJSON);
 
   alert(`Your quote "${inputAffirmation.value}" has been added to your list of affirmations!`); //notify user of change
   inputAffirmation.value = ""; //clear html text area for new input

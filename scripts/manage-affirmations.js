@@ -38,7 +38,7 @@ function displayAffirmationsArray() { //display data
     btn.addEventListener('click', () => {
     let currentBtnIndex = btn.dataset.index;
     let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
-  
+    
     //delete from array
     console.log("this is the affrimations array", affirmationsArray); //current array
     affirmationsArray.splice(currentBtnIndex, 1); //delete from array

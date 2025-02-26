@@ -68,6 +68,3 @@ function handleAdd(){
 };
 
 
-// edit quote list
-//display quote list
-//remove button

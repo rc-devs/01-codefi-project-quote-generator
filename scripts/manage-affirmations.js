@@ -1,5 +1,5 @@
 console.log('connected to manage-affirmations.js');
-//imports
+//get JSON item
 let retrievedData = localStorage.getItem("affirmationsJSON")
 
 //dom communication
@@ -12,6 +12,7 @@ displayAffirmationsArray(); //call on load to display list
 function displayAffirmationsArray() { //display data
   let affirmationsArray = JSON.parse(retrievedData) //destring JSON data
   let displayHTML = '';
+  console.log(affirmationsJSON)
 
   for (let i = 0; i < affirmationsArray.length; i++) {
     const quote = affirmationsArray[i];
@@ -46,7 +47,7 @@ function displayAffirmationsArray() { //display data
     console.log('delete'); //delete confirm
 
     //change innerhtml
-    displayAffirmationsArray(); //does not work
+    displayAffirmationsArray(); 
     });
   });
 };

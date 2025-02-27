@@ -11,10 +11,11 @@ if (data) { //truthy falsy check
   affirmationsJSON = localStorage.setItem("affirmationsJSON", affirmationsJSON);
 }
 
-
+//import modules
+//import { handleGenerate } from "./modules/handle-generate.js";
 
 //get JSON item
-/* let retrieveAffirmationsJSON = localStorage.getItem("affirmationsJSON"); */
+let retrieveAffirmationsJSON = localStorage.getItem("affirmationsJSON");
 
 //communicate with document elements
 const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation');
@@ -31,7 +32,7 @@ btnAddAffirmation.addEventListener('click', handleAdd);
 
 
 //handleGenerate
-function handleGenerate() {
+ function handleGenerate() {
   const randomAffirmation = (affirmations[(Math.floor(Math.random(affirmations) * affirmations.length))]);
   
   if (affirmations == "") { //check if array empty
@@ -49,7 +50,7 @@ function handleGenerate() {
     console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   }
 };
-
+ 
 
 //handleReset
 function handleReset(){

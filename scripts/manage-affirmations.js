@@ -39,11 +39,17 @@ function displayAffirmationsArray() { //display data
     let currentBtnIndex = btn.dataset.index;
     let affirmationsArray = JSON.parse(affirmationsJSON) //destring JSON data
     
-    //delete from array
+    //test log
     console.log("this is the affrimations array", affirmationsArray); //current array
-    affirmationsArray.splice(currentBtnIndex, 1); //delete from array
+
+    //delete from array
+    affirmationsArray.splice(currentBtnIndex, 1); 
+
+    //local storage
     affirmationsJSON = JSON.stringify(affirmationsArray); //change js back to JSON
-    localStorage.setItem("affirmationsJSON", affirmationsJSON)
+    localStorage.setItem("affirmationsJSON", affirmationsJSON);
+
+    //test logs
     console.log("affirmations array after delete", affirmationsArray); //array post delete
     console.log('delete'); //delete confirm
 

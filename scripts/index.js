@@ -4,14 +4,14 @@ import { affirmations} from "../data/affirmations.js";
 //set JSON item for array recall; could make util??
 let affirmationsArray = affirmations;
 let affirmationsJSON = JSON.stringify(affirmationsArray);
-/* localStorage.setItem("affirmationsJSON", affirmationsJSON);
+/* sessionStorage.setItem("affirmationsJSON", affirmationsJSON);
  */
 
 //import modules
 //import { handleGenerate } from "./modules/handle-generate.js";
 
 //get JSON item
-let retrieveAffirmationsJSON = localStorage.getItem("affirmationsJSON");
+let retrieveAffirmationsJSON = sessionStorage.getItem("affirmationsJSON");
 console.log(retrieveAffirmationsJSON)
 //communicate with document elements
 const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation');
@@ -71,7 +71,7 @@ function handleAdd(){
   console.log('handleAdd runs');
   affirmationsArray.push(inputAffirmation.value); //push input value to array
   affirmationsJSON = JSON.stringify(affirmationsArray); //
-  localStorage.setItem("affirmationsJSON", affirmationsJSON);
+  sessionStorage.setItem("affirmationsJSON", affirmationsJSON);
 
   alert(`Your quote "${inputAffirmation.value}" has been added to your list of affirmations!`); //notify user of change
   inputAffirmation.value = ""; //clear html text area for new input

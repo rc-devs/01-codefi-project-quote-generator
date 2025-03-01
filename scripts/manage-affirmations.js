@@ -1,7 +1,13 @@
 console.log('connected to manage-affirmations.js');
+//import
+import { affirmations} from "../data/affirmations.js";
+
+let affirmationsArray = affirmations;
+let affirmationsJSON = JSON.stringify(affirmationsArray);
+
 //get JSON item
-let affirmationsJSON = localStorage.getItem("affirmationsJSON")
-console.log(affirmationsJSON)
+/* let affirmationsJSON = sessionStorage.getItem("affirmationsJSON")
+console.log(affirmationsJSON) */
 //dom communication
 const manageContainer = document.querySelector('#js-manage-affirmations-container');
 const home = document.querySelector(".homeAnchor");
@@ -49,7 +55,7 @@ function displayAffirmationsArray() { //display data
 
     //local storage
     affirmationsJSON = JSON.stringify(affirmationsArray); //change js back to JSON
-    localStorage.setItem("affirmationsJSON", affirmationsJSON);
+    sessionStorage.setItem("affirmationsJSON", affirmationsJSON);
 
     //test logs
     console.log("affirmations array after delete", affirmationsArray); //array post delete
@@ -65,5 +71,5 @@ function displayAffirmationsArray() { //display data
 //function to update local storage when going home
 function updateStorage(){
   affirmationsJSON = JSON.stringify(affirmationsArray); //change js back to JSON
-  localStorage.setItem("affirmationsJSON", affirmationsJSON);
+  sessionStorage.setItem("affirmationsJSON", affirmationsJSON);
 } */

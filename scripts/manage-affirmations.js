@@ -1,14 +1,16 @@
 console.log('connected to manage-affirmations.js');
 //get JSON item
 let affirmationsJSON = localStorage.getItem("affirmationsJSON")
-
+console.log(affirmationsJSON)
 //dom communication
 const manageContainer = document.querySelector('#js-manage-affirmations-container');
+const home = document.querySelector(".homeAnchor");
+
+//event listeners
+//home.addEventListener('click', updateStorage)
 
 //function runs on load
 displayAffirmationsArray(); //call on load to display list
-
-
 function displayAffirmationsArray() { //display data
   let affirmationsArray = JSON.parse(affirmationsJSON) //destring JSON data
   let displayHTML = '';
@@ -59,4 +61,9 @@ function displayAffirmationsArray() { //display data
   });
 };
 
-
+/* 
+//function to update local storage when going home
+function updateStorage(){
+  affirmationsJSON = JSON.stringify(affirmationsArray); //change js back to JSON
+  localStorage.setItem("affirmationsJSON", affirmationsJSON);
+} */

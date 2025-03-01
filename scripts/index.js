@@ -1,22 +1,18 @@
-//quote array
-let affirmations = ['Eat more potatoes. Do not forget the humble spud.', 'It is not you, it is the crushing weight of capitalism upon your soul.', 'Eagles may soar, but weasels do not get sucked into jet engines.', 'The expert in anything was once a beginner.', 'WHOA, dream big! -Juno MacGuff', 'Women challenge the status quo because we are never it. - Cindy Gallop', "I'm gonna keep on dancing at the Pink Pony Club - Chappell Roan", "Fall down seven times, get up eight." ];
+//import affirmations array
+import { affirmations} from "../data/affirmations.js";
 
 //set JSON item for array recall; could make util??
-let affirmationsJSON = '';
-let data = localStorage.getItem('affirmationsJSON')
-
-if (data) { //truthy falsy check
-  affirmationsJSON = data
-} else {
-  affirmationsJSON = localStorage.setItem("affirmationsJSON", affirmationsJSON);
-}
+let affirmationsArray = affirmations;
+let affirmationsJSON = JSON.stringify(affirmationsArray);
+/* localStorage.setItem("affirmationsJSON", affirmationsJSON);
+ */
 
 //import modules
 //import { handleGenerate } from "./modules/handle-generate.js";
 
 //get JSON item
 let retrieveAffirmationsJSON = localStorage.getItem("affirmationsJSON");
-
+console.log(retrieveAffirmationsJSON)
 //communicate with document elements
 const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation');
 const btnResetAffirmation = document.querySelector('#js-reset-affirmation');
@@ -31,22 +27,29 @@ btnResetAffirmation.addEventListener('click', handleReset);
 btnAddAffirmation.addEventListener('click', handleAdd);
 
 
+
+//updatelocalestorage
+/* updateStorage
+function updateStorage(){
+  affirmationsArray = retrieveAffirmationsJSON
+} */
+
 //handleGenerate
  function handleGenerate() {
-  const randomAffirmation = (affirmations[(Math.floor(Math.random(affirmations) * affirmations.length))]);
+  const randomAffirmation = (affirmationsArray[(Math.floor(Math.random(affirmationsArray) * affirmationsArray.length))]);
   
-  if (affirmations == "") { //check if array empty
+  if (affirmationsArray == "") { //check if array empty
     alert('You have reached the end of your affirmations list. Your list has been reset.')
     handleReset();
     
-    console.log('js object', affirmations) //test log
+    console.log('js object', affirmationsArray) //test log
     console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   } else {
-    const idRandomIndex = affirmations.indexOf(randomAffirmation); //id random index 
-    affirmations.splice(idRandomIndex, 1) //drop index from array (no repeats)
+    const idRandomIndex = affirmationsArray.indexOf(randomAffirmation); //id random index 
+    affirmationsArray.splice(idRandomIndex, 1) //drop index from array (no repeats)
    
     displayQuote.textContent = `${randomAffirmation}` //display value of random index in html
-    console.log('js object', affirmations) //test log
+    console.log('js object', affirmationsArray) //test log
     console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   }
 };
@@ -54,11 +57,11 @@ btnAddAffirmation.addEventListener('click', handleAdd);
 
 //handleReset
 function handleReset(){
-  affirmations = JSON.parse(affirmationsJSON); //retreive array from storage and reassign to variable
+  affirmationsArray = JSON.parse(affirmationsJSON); //retreive array from storage and reassign to variable
   
   console.log('The quotes have been reset.') 
   displayQuote.textContent = `Inspiration Awaits!` //reset html display
-  console.log('js object', affirmations) //test log
+  console.log('js object', affirmationsArray) //test log
   console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
 }
 
@@ -66,15 +69,16 @@ function handleReset(){
 //add quote
 function handleAdd(){
   console.log('handleAdd runs');
-  affirmations.push(inputAffirmation.value); //push input value to array
-  affirmationsJSON = JSON.stringify(affirmations); //
+  affirmationsArray.push(inputAffirmation.value); //push input value to array
+  affirmationsJSON = JSON.stringify(affirmationsArray); //
   localStorage.setItem("affirmationsJSON", affirmationsJSON);
 
   alert(`Your quote "${inputAffirmation.value}" has been added to your list of affirmations!`); //notify user of change
   inputAffirmation.value = ""; //clear html text area for new input
 
-  console.log('js object', affirmations); //test log to ensure input was pushed to array
+  console.log('js object', affirmationsArray); //test log to ensure input was pushed to array
   console.log('json storage', affirmationsJSON); //test log to ensure local storage update
+  console.log(retrieveAffirmationsJSON)
 };
 
 

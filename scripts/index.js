@@ -3,8 +3,8 @@ let affirmations = ['Eat more potatoes. Do not forget the humble spud.', 'It is 
 
 //set JSON item for array recall; could make util??
 let affirmationsJSON = '';
-
 let data = localStorage.getItem('affirmationsJSON')
+
 if (data) { //truthy falsy check
   affirmationsJSON = data
 } else {

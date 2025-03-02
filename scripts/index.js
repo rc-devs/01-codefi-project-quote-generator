@@ -1,5 +1,9 @@
 //import affirmations array
 import { affirmations} from "../data/affirmations.js";
+//import { handleGenerate } from "./modules/handle-generate.js";
+//import { handleReset } from "./modules/handle-reset.js";
+//import { handleAdd } from "./modules/handle-add.js";
+//import { displayList } from "./modules/display-list.js";
 
 //set JSON item for array recall; could make util??
 let affirmationsArray = affirmations;
@@ -19,7 +23,7 @@ btnAddAffirmation.addEventListener('click', handleAdd);
 btnManageAffirmations.addEventListener('click', displayList);
 
 //handleGenerate
- function handleGenerate() {
+function handleGenerate() {
   const randomAffirmation = (affirmationsArray[(Math.floor(Math.random(affirmationsArray) * affirmationsArray.length))]);
   
   if (affirmationsArray == "") { //check if array empty
@@ -46,7 +50,7 @@ function handleReset(){
   displayQuote.textContent = `Inspiration Awaits!` //reset html display
   console.log('js object', affirmationsArray) //test log
   console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
-}
+} 
 
 function handleAdd(){
   console.log('handleAdd runs');
@@ -60,7 +64,7 @@ function handleAdd(){
   console.log('js object', affirmationsArray); //test log to ensure input was pushed to array
   console.log('json storage', affirmationsJSON); //test log to ensure local storage update
   displayList(affirmationsJSON);
-};
+}; 
 
 function displayList() { //display data
   let displayedArray = JSON.parse(affirmationsJSON) //destring JSON data
@@ -75,7 +79,6 @@ function displayList() { //display data
       <p>${quote}</p>
         <button data-index="${i}" class="js-delete" 
         >Delete</button>
-        <button class="js-favorite">Add to Favorites</button>
       </div>
       `;
     displayHTML += display;
@@ -111,5 +114,5 @@ function displayList() { //display data
     displayList(); 
     });
   }); 
-};
+}; 
 

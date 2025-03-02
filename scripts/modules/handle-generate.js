@@ -1,18 +1,19 @@
 export function handleGenerate() {
-  const randomAffirmation = (affirmations[(Math.floor(Math.random(affirmations) * affirmations.length))]);
+  const randomAffirmation = (affirmationsArray[(Math.floor(Math.random(affirmationsArray) * affirmationsArray.length))]);
   
-  if (affirmations == "") { //check if array empty
+  if (affirmationsArray == "") { //check if array empty
     alert('You have reached the end of your affirmations list. Your list has been reset.')
+    affirmationsArray = JSON.parse(affirmationsJSON)
     handleReset();
-    
-    console.log('js object', affirmations) //test log
+    console.log('js object', affirmationsArray) //test log
     console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   } else {
-    const idRandomIndex = affirmations.indexOf(randomAffirmation); //id random index 
-    affirmations.splice(idRandomIndex, 1) //drop index from array (no repeats)
+    const idRandomIndex = affirmationsArray.indexOf(randomAffirmation); //id random index 
+    affirmationsArray.splice(idRandomIndex, 1) //drop index from array (no repeats)
    
     displayQuote.textContent = `${randomAffirmation}` //display value of random index in html
-    console.log('js object', affirmations) //test log
+    //affirmationsArray = JSON.parse(affirmationsJSON)
+    console.log('js object', affirmationsArray) //test log
     console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   }
 };

@@ -7,7 +7,7 @@ let affirmationsJSON = JSON.stringify(affirmationsArray);
 
 //communicate with document elements
 const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation');
-const displayQuote = document.querySelector('#js-display-quote');
+const displayQuote = document.querySelector('#js-display-quote'); 
 const inputAffirmation = document.querySelector('#js-input-affirmation');
 const btnAddAffirmation = document.querySelector('#js-add-affirmation-button');
 const btnManageAffirmations = document.querySelector('#js-manage-button');
@@ -81,11 +81,12 @@ function displayList() { //display data
     displayHTML += display;
   }
   document.querySelector('#manage-container').innerHTML = displayHTML;
+  
   console.log('displayAffrimationsArray runs')
 
   //new dom delete
   const btnDelete = document.querySelectorAll('.js-delete');
-    
+
   //delete (?)function event
   btnDelete.forEach((btn) => {
     btn.addEventListener('click', () => {

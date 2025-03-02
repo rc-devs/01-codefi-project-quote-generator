@@ -88,7 +88,7 @@ function displayList() { //display data
   const btnDelete = document.querySelectorAll('.js-delete');
 
   //delete (?)function event
-  btnDelete.forEach((btn) => {
+   btnDelete.forEach((btn) => {
     btn.addEventListener('click', () => {
     let currentBtnIndex = btn.dataset.index;
     let displayedArray = JSON.parse(affirmationsJSON) //destring JSON data
@@ -110,5 +110,6 @@ function displayList() { //display data
     //change innerhtml
     displayList(); 
     });
-  });
+  }); 
 };
+

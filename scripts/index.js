@@ -4,15 +4,7 @@ import { affirmations} from "../data/affirmations.js";
 //set JSON item for array recall; could make util??
 let affirmationsArray = affirmations;
 let affirmationsJSON = JSON.stringify(affirmationsArray);
-/* sessionStorage.setItem("affirmationsJSON", affirmationsJSON);
- */
 
-//import modules
-//import { handleGenerate } from "./modules/handle-generate.js";
-
-//get JSON item
-let retrieveAffirmationsJSON = sessionStorage.getItem("affirmationsJSON");
-console.log(retrieveAffirmationsJSON)
 //communicate with document elements
 const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation');
 const displayQuote = document.querySelector('#js-display-quote');

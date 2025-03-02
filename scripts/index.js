@@ -18,8 +18,8 @@ const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation'
 const displayQuote = document.querySelector('#js-display-quote');
 const inputAffirmation = document.querySelector('#js-input-affirmation');
 const btnAddAffirmation = document.querySelector('#js-add-affirmation-button');
-const btnManageAffirmations = document.querySelector('#js-manage-button')
-const manageContainer = document.querySelector('#manage-container')
+const btnManageAffirmations = document.querySelector('#js-manage-button');
+const manageContainer = document.querySelector('#manage-container');
 
 
 
@@ -27,14 +27,6 @@ const manageContainer = document.querySelector('#manage-container')
 btnGenerateAffirmation.addEventListener('click', handleGenerate);
 btnAddAffirmation.addEventListener('click', handleAdd);
 btnManageAffirmations.addEventListener('click', displayList);
-
-
-
-//updatelocalestorage
-/* updateStorage
-function updateStorage(){
-  affirmationsArray = retrieveAffirmationsJSON
-} */
 
 //handleGenerate
  function handleGenerate() {
@@ -80,7 +72,6 @@ function handleAdd(){
   displayList(affirmationsJSON);
 };
 
-
 function displayList() { //display data
   let displayedArray = JSON.parse(affirmationsJSON) //destring JSON data
   let displayHTML = '';
@@ -94,7 +85,7 @@ function displayList() { //display data
       <p>${quote}</p>
         <button data-index="${i}" class="js-delete" 
         >Delete</button>
-        <button  class="js-favorite">Add to Favorites</button>
+        <button class="js-favorite">Add to Favorites</button>
       </div>
       `;
     displayHTML += display;

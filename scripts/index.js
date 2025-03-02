@@ -63,7 +63,6 @@ function handleAdd(){
 
   console.log('js object', affirmationsArray); //test log to ensure input was pushed to array
   console.log('json storage', affirmationsJSON); //test log to ensure local storage update
-  displayList(affirmationsJSON);
 }; 
 
 function displayList() { //display data
@@ -85,7 +84,7 @@ function displayList() { //display data
   }
   document.querySelector('#manage-container').innerHTML = displayHTML;
   
-  console.log('displayAffrimationsArray runs')
+  console.log('displayList runs')
 
   //new dom delete
   const btnDelete = document.querySelectorAll('.js-delete');

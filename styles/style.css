@@ -28,6 +28,8 @@ textarea {
   border: 1px orange solid;
   background-color: rgb(169, 199, 112);
   padding-top: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 

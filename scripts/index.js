@@ -11,9 +11,7 @@ const displayQuote = document.querySelector('#js-display-quote');
 const inputAffirmation = document.querySelector('#js-input-affirmation');
 const btnAddAffirmation = document.querySelector('#js-add-affirmation-button');
 const btnManageAffirmations = document.querySelector('#js-manage-button');
-const manageContainer = document.querySelector('#manage-container');
-
-
+const manageContainer = document.querySelector('#manage-container'); //element created by displayList()
 
 //event listeners
 btnGenerateAffirmation.addEventListener('click', handleGenerate);

@@ -22,13 +22,13 @@ btnHideList.addEventListener('click', hideList)
 
 //handleGenerate
 function handleGenerate() {
-  const randomAffirmation = (affirmationsArray[(Math.floor(Math.random(affirmationsArray) * affirmationsArray.length))]);
+  const randomAffirmation = (affirmationsArray[(Math.floor(Math.random(affirmationsArray) * affirmationsArray.length))]); //get random affirmation from array to pass
   
   if (affirmationsArray == "") { //check if array empty
-    alert('You have reached the end of your affirmations list. Your list has been reset.')
     affirmationsArray = JSON.parse(affirmationsJSON)
     handleReset();
     console.log('js object', affirmationsArray) //test log
+    alert('You have reached the end of your affirmations list. Your list has been reset.')
   } else {
     const idRandomIndex = affirmationsArray.indexOf(randomAffirmation); //id random index 
     affirmationsArray.splice(idRandomIndex, 1) //drop index from array (no repeats)

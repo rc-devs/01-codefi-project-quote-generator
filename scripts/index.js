@@ -33,7 +33,6 @@ function handleGenerate() {
     affirmationsArray = JSON.parse(affirmationsJSON)
     handleReset();
     console.log('js object', affirmationsArray) //test log
-    console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   } else {
     const idRandomIndex = affirmationsArray.indexOf(randomAffirmation); //id random index 
     affirmationsArray.splice(idRandomIndex, 1) //drop index from array (no repeats)
@@ -41,7 +40,6 @@ function handleGenerate() {
     displayQuote.textContent = `${randomAffirmation}` //display value of random index in html
     //affirmationsArray = JSON.parse(affirmationsJSON)
     console.log('js object', affirmationsArray) //test log
-    console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
   }
 };
  
@@ -51,7 +49,6 @@ function handleReset(){
   console.log('The quotes have been reset.') 
   displayQuote.textContent = `Inspiration Awaits!` //reset html display
   console.log('js object', affirmationsArray) //test log
-  console.log('json storage', affirmationsJSON); //test log to see if array was reset to original
 } 
 
 function handleAdd(){
@@ -64,7 +61,6 @@ function handleAdd(){
   inputAffirmation.value = ""; //clear html text area for new input
 
   console.log('js object', affirmationsArray); //test log to ensure input was pushed to array
-  console.log('json storage', affirmationsJSON); //test log to ensure local storage update
 }; 
 
 function displayList() { //display data
@@ -119,6 +115,5 @@ function displayList() { //display data
 
 function hideList() {
   //destring JSON data
-  manageContainer.innerHTML = "";
-  
+  manageContainer.innerHTML = ""; 
 }

@@ -1,9 +1,5 @@
 //import affirmations array
 import { affirmations} from "../data/affirmations.js";
-//import { handleGenerate } from "./modules/handle-generate.js";
-//import { handleReset } from "./modules/handle-reset.js";
-//import { handleAdd } from "./modules/handle-add.js";
-//import { displayList } from "./modules/display-list.js";
 
 //set JSON item for array recall; could make util??
 let affirmationsArray = affirmations;

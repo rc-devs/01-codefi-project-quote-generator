@@ -7,11 +7,11 @@ let affirmationsJSON = JSON.stringify(affirmationsArray);
 
 //communicate with document elements
 const btnGenerateAffirmation = document.querySelector('#js-generate-affirmation');
-const displayQuote = document.querySelector('#js-display-quote'); 
-const inputAffirmation = document.querySelector('#js-input-affirmation');
+const displayQuote = document.querySelector('#js-display-quote'); //container for html
+const inputAffirmation = document.querySelector('#js-input-affirmation'); //text area for input
 const btnAddAffirmation = document.querySelector('#js-add-affirmation-button');
 const btnManageAffirmations = document.querySelector('#js-manage-button');
-const manageContainer = document.querySelector('#manage-container'); //element created by displayList()
+const manageContainer = document.querySelector('#manage-container'); //container for html
 const btnHideList = document.querySelector('#js-hide-button');
 
 //event listeners
@@ -34,7 +34,6 @@ function handleGenerate() {
     affirmationsArray.splice(idRandomIndex, 1) //drop index from array (no repeats)
    
     displayQuote.textContent = `${randomAffirmation}` //display value of random index in html
-    //affirmationsArray = JSON.parse(affirmationsJSON)
     console.log('js object', affirmationsArray) //test log
   }
 };

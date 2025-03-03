@@ -16,11 +16,13 @@ const inputAffirmation = document.querySelector('#js-input-affirmation');
 const btnAddAffirmation = document.querySelector('#js-add-affirmation-button');
 const btnManageAffirmations = document.querySelector('#js-manage-button');
 const manageContainer = document.querySelector('#manage-container'); //element created by displayList()
+const btnHideList = document.querySelector('#js-hide-button');
 
 //event listeners
 btnGenerateAffirmation.addEventListener('click', handleGenerate);
 btnAddAffirmation.addEventListener('click', handleAdd);
 btnManageAffirmations.addEventListener('click', displayList);
+btnHideList.addEventListener('click', hideList)
 
 //handleGenerate
 function handleGenerate() {
@@ -115,3 +117,8 @@ function displayList() { //display data
   }); 
 }; 
 
+function hideList() {
+  //destring JSON data
+  manageContainer.innerHTML = "";
+  
+}

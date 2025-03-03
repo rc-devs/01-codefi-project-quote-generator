@@ -49,7 +49,7 @@ function handleReset(){
 function handleAdd(){
   console.log('handleAdd runs');
   affirmationsArray.push(inputAffirmation.value); //push input value to array
-  affirmationsJSON = JSON.stringify(affirmationsArray); //
+  affirmationsJSON = JSON.stringify(affirmationsArray); 
   sessionStorage.setItem("affirmationsJSON", affirmationsJSON);
 
   alert(`Your quote "${inputAffirmation.value}" has been added to your list of affirmations!`); //notify user of change
@@ -76,7 +76,6 @@ function displayList() { //display data
     displayHTML += display;
   }
   document.querySelector('#manage-container').innerHTML = displayHTML;
-  
   console.log('displayList runs')
 
   //new dom delete

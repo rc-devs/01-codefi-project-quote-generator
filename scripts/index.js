@@ -20,12 +20,12 @@ btnAddAffirmation.addEventListener('click', handleAdd);
 btnManageAffirmations.addEventListener('click', displayList);
 btnHideList.addEventListener('click', hideList)
 
-//handleGenerate
+//functions
 function handleGenerate() {
   const randomAffirmation = (affirmationsArray[(Math.floor(Math.random(affirmationsArray) * affirmationsArray.length))]); //get random affirmation from array to pass
   
   if (affirmationsArray == "") { //check if array empty
-    affirmationsArray = JSON.parse(affirmationsJSON)
+    affirmationsArray = JSON.parse(affirmationsJSON) //get array from storage
     handleReset();
     console.log('js object', affirmationsArray) //test log
     alert('You have reached the end of your affirmations list. Your list has been reset.')
